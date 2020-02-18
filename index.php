@@ -53,26 +53,27 @@ $app->post('/', function ($request, $response)
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
+		}
 		
-			elseif(strtolower($userMessage) == 'oke')
-	
+		$userMessage = $event['message']['text']
+		if(strtolower($userMessage) == 'oke')
+		{
 			$message = "Oke juga";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
-			elseif(strtolower($userMessage) != 'halo')
-			
+		}
+		
+		$userMessage = $event['message']['text']
+		if(strtolower($userMessage) != 'halo')
+		{
 			$message = "Maaf Saya tidak menegerti";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
-				
 		}
-		
-	
-
 	}
 	
 
