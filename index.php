@@ -55,25 +55,20 @@ $app->post('/', function ($request, $response)
 		
 		}
 		
-		$userMessage = $event['message']['text']
-		if(strtolower($userMessage) == 'oke')
-		{
-			$message = "Oke juga";
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
-			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+		if($userMessage == "bt"){
+			$buttonTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
+			 "title",
+			 "text",
+			 "https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg",
+		   [
+			new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Action Button','action'),
+			   ]
+			   );
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template', $buttonTemplateBuilder);
+			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-		
 		}
-		
-		$userMessage = $event['message']['text']
-		if(strtolower($userMessage) != 'halo')
-		{
-			$message = "Maaf Saya tidak menegerti";
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
-			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-		
-		}
+	
 	}
 	
 
