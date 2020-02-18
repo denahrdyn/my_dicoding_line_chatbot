@@ -55,7 +55,7 @@ $app->post('/', function ($request, $response)
 		
 		}
 		
-		elseif(strtolower($userMessage) == 'oke')
+		if(strtolower($userMessage) == 'oke')
 		{
 			$message = "Oke juga";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
@@ -64,7 +64,7 @@ $app->post('/', function ($request, $response)
 		
 		}
 		
-		elseif(strtolower($userMessage) != 'halo')
+		if(strtolower($userMessage) != 'halo')
 		{
 			$message = "Maaf Saya tidak menegerti";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
