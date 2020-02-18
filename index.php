@@ -54,36 +54,6 @@ $app->post('/', function ($request, $response)
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
 		}
-		
-		$userMessage = $event['message']['text'];
-		elseif(strtolower($userMessage) == "test")
-		{
-			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('ini adalah contoh text message');
-			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();     
-		}
-		
-		$userMessage = $event['message']['text'];
-		elseif(strtolower($userMessage) == "gambar"){
-			$imageMessage = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder("https://myanimelist.cdn-dena.com/images/characters/8/320273.jpg","https://myanimelist.cdn-dena.com/images/characters/8/320273.jpg");
-			$result = $bot->replyMessage($event['replyToken'], $imageMessage);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();     
-		}
-
-		if($userMessage == "template"){
-			$buttonTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
-			 "title",
-			 "text",
-			 "https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg",
-		   [
-			new \LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder('Action Button','action'),
-			   ]
-			   );
-			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template', $buttonTemplateBuilder);
-			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
-		}
-	
 	}
 	
 
