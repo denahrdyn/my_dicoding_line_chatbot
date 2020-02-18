@@ -55,6 +55,15 @@ $app->post('/', function ($request, $response)
 		
 		}
 		
+		elseif(strtolower($userMessage) == 'oke')
+		{
+			$message = "Oke juga";
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+		
+		}
+		
 		elseif(strtolower($userMessage) != 'halo')
 		{
 			$message = "Maaf Saya tidak menegerti";
