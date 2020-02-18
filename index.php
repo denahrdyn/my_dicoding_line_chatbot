@@ -55,7 +55,19 @@ $app->post('/', function ($request, $response)
 		
 		}
 		
-		if($userMessage == "bt"){
+		if($userMessage == "test"){
+			$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('ini adalah contoh text message');
+			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();     
+		}
+
+		if($userMessage == "gambar"){
+			$imageMessage = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder("https://myanimelist.cdn-dena.com/images/characters/8/320273.jpg","https://myanimelist.cdn-dena.com/images/characters/8/320273.jpg");
+			$result = $bot->replyMessage($event['replyToken'], $imageMessage);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();     
+		}
+
+		if($userMessage == "template"){
 			$buttonTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder(
 			 "title",
 			 "text",
