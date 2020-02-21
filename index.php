@@ -53,8 +53,9 @@ $app->post('/', function ($request, $response)
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
+		}
 		
-		elseif(strtolower($userMessage) != 'hai')
+		elseif(strtolower($userMessage) != 'hai','cc')
 		{
 			$message = "Maaf Saya Tidak Paham, Silahkan Chat Kata Lain";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
