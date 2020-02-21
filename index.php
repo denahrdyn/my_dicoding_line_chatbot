@@ -56,6 +56,16 @@ $app->post('/', function ($request, $response)
 		}
 		
 		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) != 'hai')
+		{
+			$message = "Halo Halo Hai";
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+		
+		}
+		
+		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == "bill gates")
 		{
 			$imageMessage = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder("https://akcdn.detik.net.id/community/media/visual/2019/08/14/273a412d-33c2-46be-b2a9-4ee033fa1217_43.jpeg?w=700&q=90","https://akcdn.detik.net.id/community/media/visual/2019/08/14/273a412d-33c2-46be-b2a9-4ee033fa1217_43.jpeg?w=700&q=90");
