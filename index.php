@@ -55,15 +55,7 @@ $app->post('/', function ($request, $response)
 		
 		}
 		
-		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) != 'hai')
-		{
-			$message = "Maaf Saya Tidak Paham, Silahkan Chat Kata Lain";
-            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
-			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
-			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
-		}
 		
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == "bill gates")
@@ -102,6 +94,15 @@ $app->post('/', function ($request, $response)
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			}
 		
+		$userMessage = $event['message']['text'];
+		elseif(strtolower($userMessage) != 'hai')
+		{
+			$message = "Maaf Saya Tidak Paham, Silahkan Chat Kata Lain";
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+		
+		}
 	}
 	
 
