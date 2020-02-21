@@ -55,6 +55,7 @@ $app->post('/', function ($request, $response)
 		
 		}
 		
+		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == 'hai')
 		{
 			$message = "hai juga";
