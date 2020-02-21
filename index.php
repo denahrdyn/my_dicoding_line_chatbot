@@ -58,7 +58,7 @@ $app->post('/', function ($request, $response)
 		$userMessage = $event['message']['text'];
 		elseif(strtolower($userMessage) != 'hai')
 		{
-			$message = "Halo Halo Hai";
+			$message = "wrong out";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
