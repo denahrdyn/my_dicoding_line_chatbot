@@ -55,6 +55,7 @@ $app->post('/', function ($request, $response)
 		
 		}
 		
+		$userMessage = $event['message']['text'];
 		elseif(strtolower($userMessage) != 'hai','cc')
 		{
 			$message = "Maaf Saya Tidak Paham, Silahkan Chat Kata Lain";
