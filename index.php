@@ -56,7 +56,7 @@ $app->post('/', function ($request, $response)
 		}
 		
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == 'hai')
+		elseif(strtolower($userMessage) == 'hai')
 		{
 			$message = "hai juga";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
