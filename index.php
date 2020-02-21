@@ -57,13 +57,10 @@ $app->post('/', function ($request, $response)
 		
 		
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == "cs"){
+		if(strtolower($userMessage) == "ceo"){
 			$ImageCarouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder([
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://akcdn.detik.net.id/community/media/visual/2019/08/14/273a412d-33c2-46be-b2a9-4ee033fa1217_43.jpeg?w=700&q=90",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://akcdn.detik.net.id/community/media/visual/2019/08/14/273a412d-33c2-46be-b2a9-4ee033fa1217_43.jpeg?w=700&q=90")),
-			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://i0.wp.com/angryanimebitches.com/wp-content/uploads/2013/03/tamakomarket-overallreview-tamakoanddera.jpg")),
-			  
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/commons/letter_from_the_ceo.jpg",
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('CEO Dicoding',"https://d2zvxgfo5lha7k.cloudfront.net/original/commons/letter_from_the_ceo.jpg")),
 			  ]);
 			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template',$ImageCarouselTemplateBuilder);
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
@@ -71,9 +68,20 @@ $app->post('/', function ($request, $response)
 		}
 			
 		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == "patner"){
+			$ImageCarouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder([
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/commons/partner-aws-educate.jpg",
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('AWS',"https://d2zvxgfo5lha7k.cloudfront.net/original/commons/partner-aws-educate.jpg")),
+			   new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/commons/partner-line.jpg",
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('LINE',"https://d2zvxgfo5lha7k.cloudfront.net/original/commons/partner-line.jpg")),
+			  ]);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template',$ImageCarouselTemplateBuilder);
+			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+		}	
+			
+		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == "cc"){
-			$message = "Halo Halo Hai";
-            
 			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Android Jetpack Pro", "Disusun oleh: Google ATP","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/menjadi_android_developer_expert_logo_071119140536.png",[
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/129"),
@@ -82,7 +90,6 @@ $app->post('/', function ($request, $response)
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka',"http://hilite.me/"),
 			  ]),
 			  ]);
-			  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template',$carouselTemplateBuilder);
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
