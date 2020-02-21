@@ -104,7 +104,7 @@ $app->post('/', function ($request, $response)
 		
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == "st"){{
-		$stickerMessage = new \LINE\LINEBot\MessageBuilder\StickerMessageBuilder(1,1);
+		$stickerMessage = new \LINE\LINEBot\MessageBuilder\StickerMessageBuilder(52002744,52002744);
 		$result = $bot->replyMessage($event['replyToken'], $stickerMessage);
 		return $result->getHTTPStatus() . ' ' . $result->getRawBody();     
 		}
