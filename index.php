@@ -101,7 +101,13 @@ $app->post('/', function ($request, $response)
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			}
-			
+		
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == "st"){{
+		$stickerMessage = new \LINE\LINEBot\MessageBuilder\StickerMessageBuilder(1,1);
+		$result = $bot->replyMessage($event['replyToken'], $stickerMessage);
+		return $result->getHTTPStatus() . ' ' . $result->getRawBody();     
+		}
 	}
 	
 
