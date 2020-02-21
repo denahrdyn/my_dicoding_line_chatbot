@@ -56,7 +56,7 @@ $app->post('/', function ($request, $response)
 		}
 		
 		$userMessage = $event['message']['text'];
-		if($userMessage == "kirim"){
+		if($userMessage == "kirim gambar"){
 		$imageMessage = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder("https://myanimelist.cdn-dena.com/images/characters/8/320273.jpg","https://myanimelist.cdn-dena.com/images/characters/8/320273.jpg");
 		$result = $bot->replyMessage($event['replyToken'], $imageMessage);
 		return $result->getHTTPStatus() . ' ' . $result->getRawBody();     
