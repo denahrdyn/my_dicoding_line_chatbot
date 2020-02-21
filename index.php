@@ -80,6 +80,8 @@ $app->post('/', function ($request, $response)
 			
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == "cc"){
+			$message = "Halo Halo Hai";
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Android Jetpack Pro", "Disusun oleh: Google ATP","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/menjadi_android_developer_expert_logo_071119140536.png",[
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/129"),
