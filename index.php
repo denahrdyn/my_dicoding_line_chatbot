@@ -56,7 +56,7 @@ $app->post('/', function ($request, $response)
 		}
 		
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) != 'hai')
+		if(strtolower($userMessage) != 'hai' & 'ls' )
 		{
 			$message = "maaf kaka, kata kunci belum terdaftar.";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
