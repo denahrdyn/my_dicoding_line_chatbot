@@ -243,7 +243,12 @@ $app->post('/', function ($request, $response)
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			}
 		
-			
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == "yt"){
+		$videoMessage = new \LINE\LINEBot\MessageBuilder\VideoMessageBuilder("https://www.youtube.com/channel/UCM6BWkgiGrCHG967i_PyMiw/featured","https://www.youtube.com/channel/UCM6BWkgiGrCHG967i_PyMiw/featured");
+		$result = $bot->replyMessage($event['replyToken'], $videoMessage);
+		return $result->getHTTPStatus() . ' ' . $result->getRawBody();     
+		}		
 	}
 	
 
