@@ -62,7 +62,7 @@ $app->post('/', function ($request, $response)
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/commons/letter_from_the_ceo.jpg",
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('CEO Dicoding',"https://d2zvxgfo5lha7k.cloudfront.net/original/commons/letter_from_the_ceo.jpg")),
 			  ]);
-			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template',$ImageCarouselTemplateBuilder);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('ceo dicoding',$ImageCarouselTemplateBuilder);
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		}
@@ -81,12 +81,11 @@ $app->post('/', function ($request, $response)
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/ar_vr_developer_logo_301219145216.png",
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('AR/VR Dev',"https://www.dicoding.com/learningpaths/23")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/unity_game_developer_logo_201219135320.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Unity Dev',"https://www.dicoding.com/learningpaths/13")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Unity G.Dev',"https://www.dicoding.com/learningpaths/13")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/construct_game_developer_logo_201219135236.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Const Dev',"https://www.dicoding.com/learningpaths/17")),
-
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Const G.Dev',"https://www.dicoding.com/learningpaths/17")),
 			  ]);
-			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template',$ImageCarouselTemplateBuilder);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('learning path',$ImageCarouselTemplateBuilder);
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			}
