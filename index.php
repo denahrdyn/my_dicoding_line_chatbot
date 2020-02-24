@@ -71,7 +71,7 @@ $app->post('/', function ($request, $response)
 		if(strtolower($userMessage) == "learning path"){
 			$ImageCarouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder([
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/android_developer_logo_201219145044.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Android Developer',"https://www.dicoding.com/learningpaths/7")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Android Developer',"https://www.dicoding.com/learningpaths/7.")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/cloud_developer_logo_201219145056.png",
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cloud Developer',"https://d2zvxgfo5lha7k.cloudfront.net/original/commons/partner-line.jpg")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/web_developer_logo_201219135331.png",
