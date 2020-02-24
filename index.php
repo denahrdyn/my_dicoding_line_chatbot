@@ -72,7 +72,7 @@ $app->post('/', function ($request, $response)
 		}
 		
 		$userMessage = $event['message']['text'];
-		elseif(strtolower($userMessage) != 'hai')
+		if(strtolower($userMessage) != 'hai')
 		{
 			$message = "Halo Halo Hai kaka";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
