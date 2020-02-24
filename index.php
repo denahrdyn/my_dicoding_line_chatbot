@@ -53,8 +53,10 @@ $app->post('/', function ($request, $response)
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
+		}
 		
-		elseif(strtolower($userMessage) != 'hai')
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) != 'hai')
 		{
 			$message = "maaf kaka, kata kunci belum terdaftar.";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
@@ -62,14 +64,7 @@ $app->post('/', function ($request, $response)
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
 		}
-	}
-	
 
-	$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($_ENV['CHANNEL_ACCESS_TOKEN']);
-	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV['CHANNEL_SECRET']]);
-	$data = json_decode($body, true);
-	foreach ($data['events'] as $event)
-	{
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == 'ls')
 		{
