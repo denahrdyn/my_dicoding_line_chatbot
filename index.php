@@ -58,12 +58,12 @@ $app->post('/', function ($request, $response)
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == 'ls')
 		{
-			$message = "list kata kunci
-			*hai : menyapa pengguna
-			*ls : menampilkan list menu perintah
-			*ceo : menampilkan info ceo dicoding
-			*learning path : meanmpilakn learning path
-			*lp NamaPath: menampilkan path lebih spesifik
+			$message = "list kata kunci :
+			hai : menyapa pengguna
+			ls : menampilkan list menu perintah
+			ceo : menampilkan info ceo dicoding
+			learning path : menampilkan learning path
+			lp NamaPath: menampilkan path lebih spesifik
 			(lp android / lp unity)"; 
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
@@ -74,7 +74,7 @@ $app->post('/', function ($request, $response)
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) != 'hai')
 		{
-			$message = "Halo Halo Hai kaka";
+			$message = "maaf kaka, kata kunci belum terdaftar.";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
