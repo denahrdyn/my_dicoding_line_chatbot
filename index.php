@@ -60,7 +60,7 @@ $app->post('/', function ($request, $response)
 		if(strtolower($userMessage) == "ceo"){
 			$ImageCarouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder([
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/commons/letter_from_the_ceo.jpg",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('CEO Dicoding',"https://d2zvxgfo5lha7k.cloudfront.net/original/commons/letter_from_the_ceo.jpg")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('CEO Dicoding',"https://www.dicoding.com/about")),
 			  ]);
 			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('ceo dicoding',$ImageCarouselTemplateBuilder);
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
