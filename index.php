@@ -112,7 +112,7 @@ $app->post('/', function ($request, $response)
 			}
 			
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == "learning cloud"){
+		if(strtolower($userMessage) == "lp cloud"){
 			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Dasar-Dasar Azure Cloud", "Disusun oleh: Microsoft","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_dasar_dasar_azure_cloud_logo_071119141523.png",[
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/144"),
@@ -131,7 +131,104 @@ $app->post('/', function ($request, $response)
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			}
+			
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == "lp web"){
+			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Dasar Pemrograman Web", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_dasar_pemrograman_web_logo_071119140439.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/123"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Membangun Progressive Web Apps", "Disusun oleh: CodePolitan","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/membangun_progressive_web_apps_logo_071119140959.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/74"),
+			  ]),
+			  ]);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('learning path front-end web',$carouselTemplateBuilder);
+			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			}
 		
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == "lp ar/vr"){
+			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Augmented Reality", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_augmented_reality_logo_071119141445.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/135"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Virtual Reality", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_virtual_reality_logo_251119111738.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/150"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Mixed Reality", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_mixed_reality_logo_060120090033.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/155"),
+			  ]),
+			  ]);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('learning path ar/vr',$carouselTemplateBuilder);
+			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			}
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == "lp ar"){
+			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Augmented Reality", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_augmented_reality_logo_071119141445.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/135"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Virtual Reality", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_virtual_reality_logo_251119111738.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/150"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Mixed Reality", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_mixed_reality_logo_060120090033.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/155"),
+			  ]),
+			  ]);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('learning path ar/vr',$carouselTemplateBuilder);
+			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			}
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == "lp vr"){
+			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Augmented Reality", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_augmented_reality_logo_071119141445.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/135"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Virtual Reality", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_virtual_reality_logo_251119111738.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/150"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Mixed Reality", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_mixed_reality_logo_060120090033.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/155"),
+			  ]),
+			  ]);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('learning path ar/vr',$carouselTemplateBuilder);
+			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			}
+			
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == "lp unity"){
+			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Game untuk Pemula", "Disusun oleh: Asosiasi Game Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_game_untuk_pemula_logo_071119140724.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/58"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Menjadi Game Developer Expert", "Disusun oleh: Asosiasi Game Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_game_untuk_pemula_logo_071119140724.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/47"),
+			  ]),
+			  ]);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('learning path unity game',$carouselTemplateBuilder);
+			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			}
+		
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == "lp Construct"){
+			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Membuat Game dengan Construct 2", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_game_dengan_construct_2_logo_071119140229.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/65"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Menjadi Construct 2 Developer Expert", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_membuat_game_dengan_construct_2_logo_071119140229.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/95"),
+			  ]),
+			  ]);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('learning path Construct game',$carouselTemplateBuilder);
+			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			}
+			
 	}
 	
 
