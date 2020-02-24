@@ -73,17 +73,17 @@ $app->post('/', function ($request, $response)
 		if(strtolower($userMessage) == "learning path"){
 			$ImageCarouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselTemplateBuilder([
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/android_developer_logo_201219145044.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Android Developer',"https://www.dicoding.com/learningpaths/7")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://www.dicoding.com/learningpaths/7")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/cloud_developer_logo_201219145056.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cloud Developer',"")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Cloud Dev',"")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/web_developer_logo_201219135331.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Front-End Web Dev',"")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('FE Web Dev',"")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/ar_vr_developer_logo_301219145216.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('AR/VR Developer',"")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('AR/VR Dev',"")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/unity_game_developer_logo_201219135320.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Unity Game Devel',"")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Unity GamDev',"")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/construct_game_developer_logo_201219135236.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Construct Game Dev',"")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Construct GamDev',"")),
 
 			  ]);
 			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template',$ImageCarouselTemplateBuilder);
