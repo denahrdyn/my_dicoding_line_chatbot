@@ -75,15 +75,15 @@ $app->post('/', function ($request, $response)
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/android_developer_logo_201219145044.png",
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://www.dicoding.com/learningpaths/7")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/cloud_developer_logo_201219145056.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://www.dicoding.com/learningpaths/7")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/web_developer_logo_201219135331.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('FE Web Dev',"")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://www.dicoding.com/learningpaths/7")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/ar_vr_developer_logo_301219145216.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('AR/VR Dev',"")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://www.dicoding.com/learningpaths/7")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/unity_game_developer_logo_201219135320.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://www.dicoding.com/learningpaths/7")),
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ImageCarouselColumnTemplateBuilder("https://d2zvxgfo5lha7k.cloudfront.net/original/academy/construct_game_developer_logo_201219135236.png",
-			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"")),
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('Buka Browser',"https://www.dicoding.com/learningpaths/7")),
 
 			  ]);
 			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('nama template',$ImageCarouselTemplateBuilder);
