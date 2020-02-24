@@ -48,13 +48,38 @@ $app->post('/', function ($request, $response)
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == 'hai')
 		{
-			$message = "Halo Halo Hai";
+			$message = "Halo Halo Hai kaka";
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
 			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 		
 		}
 		
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == 'ls')
+		{
+			$message = "list kata kunci
+			*hai : menyapa pengguna
+			*ls : menampilkan list menu perintah
+			*ceo : menampilkan info ceo dicoding
+			*learning path : meanmpilakn learning path
+			*lp NamaPath: menampilkan path lebih spesifik
+			(lp android / lp unity)"; 
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+		
+		}
+		
+		$userMessage = $event['message']['text'];
+		elseif(strtolower($userMessage) != 'hai')
+		{
+			$message = "Halo Halo Hai kaka";
+            $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($message);
+			$result = $bot->replyMessage($event['replyToken'], $textMessageBuilder);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+		
+		}
 		
 		$userMessage = $event['message']['text'];
 		if(strtolower($userMessage) == "ceo"){
