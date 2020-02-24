@@ -91,7 +91,7 @@ $app->post('/', function ($request, $response)
 			}
 					
 		$userMessage = $event['message']['text'];
-		if(strtolower($userMessage) == "learning android"){
+		if(strtolower($userMessage) == "lp android"){
 			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
 			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Memulai Pemrograman Dengan Kotlin", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/memulai_pemrograman_dengan_kotlin_logo_071119141033.png",[
 			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/80"),
@@ -107,6 +107,27 @@ $app->post('/', function ($request, $response)
 			  ]),
 			  ]);
 			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('learning path android',$carouselTemplateBuilder);
+			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
+			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
+			}
+			
+		$userMessage = $event['message']['text'];
+		if(strtolower($userMessage) == "learning cloud"){
+			$carouselTemplateBuilder = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselTemplateBuilder([
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Belajar Dasar-Dasar Azure Cloud", "Disusun oleh: Microsoft","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_dasar_dasar_azure_cloud_logo_071119141523.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/144"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Azure Cloud Developer", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/menjadi_azure_cloud_developer_logo_231219145948.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/83"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("AWS Solutions Architect Associate", "Disusun oleh: Dicoding Indonesia","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/belajar_menjadi_aws_solutions_architect_associate_logo_071119141240.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/104"),
+			  ]),
+			  new \LINE\LINEBot\MessageBuilder\TemplateBuilder\CarouselColumnTemplateBuilder("Google Cloud Engineer", "Disusun oleh: Google ATP","https://d2zvxgfo5lha7k.cloudfront.net/original/academy/menjadi_google_cloud_engineer_logo_071119141421.png",[
+			  new \LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder('buka',"https://www.dicoding.com/academies/133"),
+			  ]),
+			  ]);
+			$templateMessage = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('learning path cloud',$carouselTemplateBuilder);
 			$result = $bot->replyMessage($event['replyToken'], $templateMessage);
 			return $result->getHTTPStatus() . ' ' . $result->getRawBody();
 			}
