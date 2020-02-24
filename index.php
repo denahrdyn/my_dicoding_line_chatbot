@@ -60,7 +60,6 @@ $app->post('/', function ($request, $response)
 		if(strtolower($userMessage) == 'ls')
 		{
 			$message = "list kata kunci :
-			hai : menyapa pengguna
 			ls : menampilkan list menu perintah
 			ceo : menampilkan info ceo dicoding
 			learning path : menampilkan learning path
