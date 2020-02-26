@@ -1,6 +1,6 @@
 # My Dicoding LINE Chatbot 24 februari 2020
 
-for develop submission apps LINE Chatbot 
+for develop submission Apps LINE Chatbot Class
 
 invite LINE Dicoding Bot Fans 
 
